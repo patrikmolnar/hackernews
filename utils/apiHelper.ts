@@ -1,3 +1,5 @@
+import { Item } from "../types/item";
+
 const baseUrl = "https://hacker-news.firebaseio.com/v0";
 const topStoriesUrl = `${baseUrl}/topstories.json`;
 
@@ -19,7 +21,7 @@ export const fetchTopStories = async () => {
   return storyIds;
 };
 
-export const fetchItems = (storyIds: number[]) =>
+export const fetchItems = (storyIds: number[]): Promise<Item[]> =>
   Promise.all(
     storyIds.map((id) =>
       fetch(`${baseUrl}/item/${id}.json`).then((story) => story.json())

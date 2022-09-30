@@ -1,45 +1,38 @@
 import type { NextPage, GetServerSideProps } from "next";
 import Head from "next/head";
+import Title from "../components/Title/Title";
+import TopStories from "../components/TopStories/TopStories";
 import styles from "../styles/Home.module.css";
-import { fetchTopStories } from "../utils/apiHelper";
-
+import { fetchTopStories, fetchItems } from "../utils/apiHelper";
 interface Props {
-  topStories: number[];
+  storyIds: number[];
 }
 
-const Home: NextPage<Props> = ({ topStories }) => {
+const Home: NextPage<Props> = ({ storyIds }) => {
   return (
     <div>
       <Head>
-        <title>Hacker News Next</title>
-        <meta
-          name="description"
-          content="Hacker News clone made with Next.js"
-        />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Hacker News Next</title>{" "}
       </Head>
-
       <main className={styles.main}>
-        <h1 className={styles.title}>Hacker News</h1>
-        {topStories.map((story) => (
-          <p key={story}>{story}</p>
-        ))}
+        <Title title="HackerNews" />
+        <TopStories storyIds={storyIds} />
       </main>
     </div>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const topStories = await fetchTopStories();
+  const storyIds = await fetchTopStories();
 
   // show error page if fetching goes wrong
-  if (!topStories) {
+  if (!storyIds) {
     return {
       notFound: true,
     };
   }
 
-  return { props: { topStories } };
+  return { props: { storyIds } };
 };
 
 export default Home;
