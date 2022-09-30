@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.avatar {
+  display: flex;
+  padding: 15px;
+  color: #4bffa5bf;
+  height: 100%;
+  align-items: center;
+}
+
+.avatar > img {
+  object-fit: cover;
+  border: 1px solid #4bffa5bf;
+}
+
+.storyItem {
+  display: flex;
+  font-size: 20px;
+  align-self: center;
+  font-weight: 400;
+}
+
+.storyContainer {
+  display: inline-flex;
+  margin: 20px;
+  background-color: #27272a;
+  border: 2px solid #4bffa5bf;
+  font-weight: 500;
+  font-size: 30px;
+  position: relative;
+  color: white;
+  width: 100%;
+  max-width: 900px;
+  height: 200px;
+}
+
+.storyContainer:after {
+  flex: auto;
+  content: "";
+  position: absolute;
+  background-color: #4bffa5bf;
+  top: 8px;
+  left: 8px;
+  right: -8px;
+  bottom: -8px;
+  z-index: -1;
+}
