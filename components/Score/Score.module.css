@@ -22,7 +22,8 @@
   transition: all 0.3s ease;
 }
 
-@media (min-width: 480px) and (max-width: 639px) {
+@media (min-width: 480px) and (max-width: 639px) and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi) {
   .scoreText {
     font-size: 18px;
   }
