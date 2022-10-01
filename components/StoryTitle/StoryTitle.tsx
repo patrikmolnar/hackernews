@@ -7,7 +7,7 @@ interface Props {
 
 const StoryTitle: React.FunctionComponent<Props> = ({ title, url }) => (
   <h1 className={styles.storyTitle}>
-    <a target="_blank" href={url}>
+    <a target="_blank" rel="noopener, noreferrer" href={url}>
       {title}
     </a>
   </h1>

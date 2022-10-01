@@ -22,7 +22,9 @@ const TopStories: React.FunctionComponent<Props> = ({ storyIds }) => {
       setStories(stories);
       setLoading(false);
     });
-  }, []);
+    // cleanup fn
+    return () => {};
+  }, [storyIds]);
 
   if (loading) return <p>Loading...</p>;
   if (!stories) return <p>{"No stories..:("}</p>;
