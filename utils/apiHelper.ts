@@ -21,12 +21,27 @@ export const fetchTopStories = async () => {
   return storyIds;
 };
 
-export const fetchItems = (storyIds: number[]): Promise<Item[]> =>
-  Promise.all(
+export const fetchItemsWithUsers = async (
+  storyIds: number[]
+): Promise<Item[]> => {
+  const stories = await Promise.all(
     storyIds.map((id) =>
       fetch(`${baseUrl}/item/${id}.json`).then((story) => story.json())
     )
   );
 
-export const fetchUser = (userName: string) =>
-  fetch(`${baseUrl}/user/${userName}.json`).then((user) => user.json());
+  const users = await Promise.all(
+    stories.map((story) =>
+      fetch(`${baseUrl}/user/${story.by}.json`).then((user) => user.json())
+    )
+  );
+
+  return stories
+    .map((story) => ({
+      ...story,
+      user: users
+        .map((user) => ({ id: user.id, karma: user.karma }))
+        .find((user) => user.id === story.by),
+    }))
+    .sort((a, b) => a.score - b.score);
+};
