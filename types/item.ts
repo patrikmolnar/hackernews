@@ -1,3 +1,4 @@
+import { User } from "./user";
 export interface Item {
   by: string;
   descendants: number;
@@ -11,4 +12,5 @@ export interface Item {
   type: string;
   url: string;
   text?: string;
+  user: User;
 }

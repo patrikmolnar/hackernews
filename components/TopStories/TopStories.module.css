@@ -14,19 +14,30 @@
   padding: 15px;
   color: #4bffa5bf;
   height: 100%;
+  flex: 1 1 0;
   align-items: center;
+  justify-content: center;
 }
 
 .avatar > img {
   object-fit: cover;
-  border: 1px solid #4bffa5bf;
+  border: 1px solid white;
 }
 
 .storyItem {
-  display: flex;
-  font-size: 20px;
   align-self: center;
+  flex-direction: column;
+  flex: 3 1 0;
+}
+
+.storyTitle {
+  font-size: 20px;
   font-weight: 400;
+}
+
+.storyTitle > a:hover {
+  color: #4bffa5bf;
+  transition: all 0.3s ease;
 }
 
 .storyContainer {
@@ -53,4 +64,18 @@
   right: -8px;
   bottom: -8px;
   z-index: -1;
+}
+
+.storyContainer:hover,
+.storyContainer:active {
+  color: white;
+  background-color: #3a3a40;
+  transition: all 0.3s ease;
+  border: 2px solid white;
+}
+
+.storyContainer:hover:after {
+  background-color: white;
+  border: 2px solid white;
+  transition: all 0.3s ease;
 }

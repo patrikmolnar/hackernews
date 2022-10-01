@@ -3,7 +3,7 @@ import Head from "next/head";
 import Title from "../components/Title/Title";
 import TopStories from "../components/TopStories/TopStories";
 import styles from "../styles/Home.module.css";
-import { fetchTopStories, fetchItems } from "../utils/apiHelper";
+import { fetchTopStories } from "../utils/apiHelper";
 interface Props {
   storyIds: number[];
 }
