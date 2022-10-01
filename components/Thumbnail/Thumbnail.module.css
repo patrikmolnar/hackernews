@@ -1,0 +1,14 @@
+.thumbnail {
+  display: flex;
+  padding: 15px;
+  color: #4bffa5bf;
+  height: 100%;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail > img {
+  object-fit: cover;
+  border: 1px solid #4bffa5bf;
+}

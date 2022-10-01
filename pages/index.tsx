@@ -1,6 +1,6 @@
 import type { NextPage, GetServerSideProps } from "next";
 import Head from "next/head";
-import Title from "../components/Title/Title";
+import Header from "../components/Header/Header";
 import TopStories from "../components/TopStories/TopStories";
 import styles from "../styles/Home.module.css";
 import { fetchTopStories } from "../utils/apiHelper";
@@ -15,7 +15,7 @@ const Home: NextPage<Props> = ({ storyIds }) => {
         <title>Hacker News Next</title>{" "}
       </Head>
       <main className={styles.main}>
-        <Title title="HackerNews" />
+        <Header text="HackerNews" />
         <TopStories storyIds={storyIds} />
       </main>
     </div>

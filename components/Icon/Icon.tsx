@@ -3,7 +3,6 @@ import Comment from "../../assets/Icons/comment.svg";
 import Time from "../../assets/Icons/time.svg";
 import User from "../../assets/Icons/user.svg";
 import Triangle from "../../assets/Icons/triangle.svg";
-import styles from "./Icon.module.css";
 
 interface Props {
   name: string;
@@ -21,7 +20,7 @@ const icons: any = {
 const Icon: React.FunctionComponent<Props> = ({ name, ...props }) => {
   let IconComponent = icons[name];
 
-  return <IconComponent className={styles.icon} {...props} />;
+  return <IconComponent {...props} />;
 };
 
 export default Icon;

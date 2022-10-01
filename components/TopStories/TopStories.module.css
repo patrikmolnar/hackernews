@@ -9,35 +9,14 @@
   padding: 0 20px;
 }
 
-.avatar {
-  display: flex;
-  padding: 15px;
-  color: #4bffa5bf;
-  height: 100%;
-  flex: 1 1 0;
-  align-items: center;
-  justify-content: center;
-}
-
-.avatar > img {
-  object-fit: cover;
-  border: 1px solid white;
-}
-
 .storyItem {
   align-self: center;
   flex-direction: column;
-  flex: 3 1 0;
+  flex: 4 1 0;
 }
 
-.storyTitle {
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.storyTitle > a:hover {
-  color: #4bffa5bf;
-  transition: all 0.3s ease;
+.storyInfoContainer {
+  display: flex;
 }
 
 .storyContainer {
@@ -51,7 +30,7 @@
   color: white;
   width: 100%;
   max-width: 900px;
-  height: 200px;
+  height: 140px;
 }
 
 .storyContainer:after {

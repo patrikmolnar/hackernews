@@ -1,0 +1,47 @@
+.wrapper {
+  align-self: center;
+  text-align: center;
+  flex: 1 1 0;
+  color: "#4bffa5bf";
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scoreText {
+  font-weight: 400;
+}
+
+.triangleIcon:hover {
+  cursor: pointer;
+  fill: #4bffa5bf;
+  stroke: transparent;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .scoreText {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .scoreText {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .scoreText {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .scoreText {
+    font-size: 28px;
+  }
+}
