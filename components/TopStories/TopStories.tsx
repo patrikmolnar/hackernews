@@ -30,9 +30,13 @@ const TopStories: React.FunctionComponent<Props> = ({ storyIds }) => {
   if (!stories) return <p>{"No stories..:("}</p>;
 
   return (
-    <div className={styles.container}>
+    <div data-cy="stories-container" className={styles.container}>
       {stories.map((story) => (
-        <div className={styles.storyContainer} key={story.id}>
+        <div
+          data-cy="story-item"
+          className={styles.storyContainer}
+          key={story.id}
+        >
           <Thumbnail src="/cat.jpg" />
           <div className={styles.storyItem}>
             <StoryTitle title={story.title} url={story.url} />

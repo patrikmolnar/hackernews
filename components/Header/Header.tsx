@@ -6,7 +6,7 @@ interface Props {
 
 const Header: React.FunctionComponent<Props> = ({ text }) => (
   <div className={styles.container}>
-    <h1 className={styles.glitch}>
+    <h1 data-cy="header" className={styles.glitch}>
       <span aria-hidden="true">{text}</span>
       {text}
       <span aria-hidden="true">{text}</span>
